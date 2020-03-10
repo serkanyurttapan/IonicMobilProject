@@ -17,6 +17,17 @@ const routes: Routes = [
           }
         ]
       },
+
+      {
+        path: 'product',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../product/product.module').then(m => m.ProductPageModule)
+          }
+        ]
+      },
       {
         path: 'tab2',
         children: [
